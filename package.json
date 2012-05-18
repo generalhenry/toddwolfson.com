@@ -1,0 +1,24 @@
+{
+  "author": "todd wolfson <todd.wolfson@ensighten.com> (toddwolfson.com)",
+  "name": "toddwolfson.com",
+  "description": "trolololol",
+  "version": "0.0.0",
+  "homepage": "toddwolfson.com",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/generalhenry/toddwolfson.com.git"
+  },
+  "main": "app.js",
+  "dependencies": {
+    "express": "~2.5.9"
+  },
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "0.6.x"
+  },
+  "subdomain": "toddwolfson.com",
+  "scripts": {
+    "start": "app.js"
+  }
+}
