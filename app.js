@@ -35,9 +35,14 @@ process.on('uncaughtException', function uncaughtException (error) {
   process.exit(1);
 });
 
-var net = require('net');
-var repl = require("repl");
+var dnode = require('dnode');
 
-net.createServer(function tcpRepl (socket) {
-  repl.start("trololol> ", socket).context.app = app;
-}).listen(5000);
+var server = dnode({
+    addRoute : function (path, troll, cb) {
+      app.get(path, function (req, res, next) {
+        res.send(troll);
+      });
+      return cb(null, 'lol');
+    }
+});
+server.listen(app);

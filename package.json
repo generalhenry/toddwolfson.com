@@ -2,7 +2,7 @@
   "author": "todd wolfson <todd.wolfson@ensighten.com> (toddwolfson.com)",
   "name": "toddwolfson.com",
   "description": "trolololol",
-  "version": "0.1.0-3",
+  "version": "0.1.0-8",
   "homepage": "toddwolfson.com",
   "repository": {
     "type": "git",
@@ -11,7 +11,8 @@
   "main": "app.js",
   "dependencies": {
     "express": "~2.5.9",
-    "nodetime": "~0.2.9"
+    "nodetime": "~0.2.9",
+    "dnode": "~0.9.11"
   },
   "devDependencies": {},
   "optionalDependencies": {},
