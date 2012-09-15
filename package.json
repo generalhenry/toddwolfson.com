@@ -11,7 +11,6 @@
   "main": "app.js",
   "dependencies": {
     "express": "~2.5.9",
-    "nodetime": "~0.2.9",
     "dnode": "~0.9.11"
   },
   "devDependencies": {},
