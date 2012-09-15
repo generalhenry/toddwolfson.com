@@ -1,16 +1,3 @@
-var nodetime = require('nodetime');
-
-nodetime.profile(function (hmm, sup) {
-  console.error(hmm);
-  console.log(sup);
-});
-
-var nodetimeId;
-
-nodetime.on('session', function nodetimeSession (id) {
-  nodetimeId = id;
-});
-
 var express = require('express');
 var app = express.createServer();
 app.use(express.favicon());
@@ -20,8 +7,7 @@ app.listen(process.env.port || 8080);
 app.get('/health', function(req, res, next){
   res.json({
     pid: process.pid,
-    uptime: process.uptime(),
-    nodetimeId: nodetimeId
+    uptime: process.uptime()
   });
 });
 
