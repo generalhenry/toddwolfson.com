@@ -2,7 +2,7 @@
   "author": "todd wolfson <todd.wolfson@ensighten.com> (toddwolfson.com)",
   "name": "toddwolfson.com",
   "description": "trolololol",
-  "version": "0.1.0-38",
+  "version": "0.1.0-40",
   "homepage": "toddwolfson.com",
   "repository": {
     "type": "git",
@@ -11,7 +11,8 @@
   "main": "app.js",
   "dependencies": {
     "express": "~2.5.9",
-    "dnode": "~0.9.11"
+    "dnode": "~0.9.11",
+    "redis": "~0.8.1"
   },
   "devDependencies": {},
   "optionalDependencies": {},
@@ -20,6 +21,6 @@
   },
   "subdomain": "toddwolfson.com",
   "scripts": {
-    "start": "app.js"
+    "start": "node app.js"
   }
 }

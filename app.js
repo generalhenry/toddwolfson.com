@@ -1,13 +1,26 @@
 var express = require('express');
+var redis = require('redis');
+var client = redis.createClient(9427, 'ray.redistogo.com');
+client.auth('adee4c8cca66de7ae8b4d6b012ce844d');
 var app = express.createServer();
 app.use(express.favicon());
+app.use(function (req, res, next) {
+  client.incr('views');
+  return next();
+});
 app.use(express.static(process.cwd() + '/public'));
 app.listen(process.env.port || 8080);
 
 app.get('/health', function(req, res, next){
-  res.json({
-    pid: process.pid,
-    uptime: process.uptime()
+  client.get('views', function (error, views) {
+    if (error) {
+      throw new Error(error);
+    }
+    res.json({
+      pid: process.pid,
+      uptime: process.uptime(),
+      views: views
+    });
   });
 });
 
